@@ -22,3 +22,14 @@ Route::post('/create', [
     'uses' => 'TasksController@createTask',
     'as' => 'create'
 ]);
+
+Route::post('/edit', [
+    'uses' => 'TasksController@editTask',
+    'as' => 'edit',
+]);
+
+
+Route::post('/delete', [
+    'uses' => 'TasksController@deleteTask',
+    'as' => 'delete',
+]);
