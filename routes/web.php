@@ -13,6 +13,23 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [
+    'uses' => 'TasksController@getIndex',
+    'as' => 'taskIndex'
+]);
+
+Route::post('/create', [
+    'uses' => 'TasksController@createTask',
+    'as' => 'create'
+]);
+
+Route::post('/edit', [
+    'uses' => 'TasksController@editTask',
+    'as' => 'edit',
+]);
+
+
+Route::post('/delete', [
+    'uses' => 'TasksController@deleteTask',
+    'as' => 'delete',
+]);
